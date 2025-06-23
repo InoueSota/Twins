@@ -55,21 +55,22 @@ public class SpeedManager : MonoBehaviour
 
             if (fastTimer <= 0) { isFast = false; }
         }
-        else
-        {
-            moveSpeed = defaultSpeed;
-        }
+        else { moveSpeed = defaultSpeed; }
     }
 
     // Setter
     public void AddFastCount()
     {
-        fastCount++;
-
-        if (fastCount >= fastCountMax)
+        if (!isFast)
         {
-            fastTimer = fastTime;
-            isFast = true;
+            fastCount++;
+
+            if (fastCount >= fastCountMax)
+            {
+                fastCount = 0;
+                fastTimer = fastTime;
+                isFast = true;
+            }
         }
     }
 

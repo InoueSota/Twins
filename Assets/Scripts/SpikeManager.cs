@@ -41,17 +41,17 @@ public class SpikeManager : MonoBehaviour
     }
     void Reach()
     {
+        // プレイヤーとどれくらい離れているか取得
         float zDistance = playerTransform.position.z - transform.position.z;
 
-        if (zDistance >= 8f)
-        {
-            Destroy(gameObject);
-        }
+        // プレイヤーよりも一定距離下がっていたら削除する
+        if (zDistance >= 8f) { Destroy(gameObject); }
     }
     void SubtractSpike()
     {
         int subtractCount = 0;
 
+        // トゲを減らす処理
         while (subtractCount < 9f)
         {
             int randomSpikeNumber = Random.Range(0, 19);
