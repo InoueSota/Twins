@@ -45,9 +45,6 @@ public class SpikeManager : MonoBehaviour
 
         if (zDistance >= 8f)
         {
-            GameManager gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-            gameManager.SubtractHp();
-
             Destroy(gameObject);
         }
     }

@@ -103,20 +103,6 @@ public class ScoreManager : MonoBehaviour
         // Comboタイマーを初期化する
         comboTimer = comboTime;
     }
-    public void SetBodyBlowScore()
-    {
-        // Scoreを加算する
-        score += (int)(bodyBlowValue * comboMag);
-
-        // ScoreのAnimatorを起動する
-        scoreAnimator.SetTrigger("Start");
-
-        // ComboMagを加算する
-        comboMag += comboAddValue;
-
-        // Comboタイマーを初期化する
-        comboTimer = comboTime;
-    }
     public void SetFinalScore() { finalScore = score; }
     public void SetStart()
     {

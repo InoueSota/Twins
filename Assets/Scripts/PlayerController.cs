@@ -57,20 +57,14 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Spike"))
         {
-            float xDistance = other.transform.position.x - transform.position.x;
-            float zDistance = other.transform.position.z - transform.position.z;
+            audioSource.Play();
 
-            if (Mathf.Abs(xDistance) >= Mathf.Abs(zDistance))
-            {
-                audioSource.Play();
+            // ƒ_ƒ[ƒW‚ğó‚¯‚é
+            GameManager gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+            gameManager.SubtractHp();
 
-                // Score
-                ScoreManager scoreManager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>();
-                scoreManager.SetBodyBlowScore();
-
-                // Spike‚ğÁ‹
-                Destroy(other.gameObject);
-            }
+            // Spike‚ğÁ‹
+            Destroy(other.gameObject);
         }
     }
 
